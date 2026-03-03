@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tvac server viewer</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.4/build/global/luxon.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon@1.3.1/dist/chartjs-adapter-luxon.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3.0.1"></script>
+</head>
+<body>
+
+<div class="controls">
+    <button id="toggleMode">switch to file upload</button>
+    <select id="viewDuration">
+        <option value="all">runtime view</option>
+        <option value="0.25">last 15 min</option>
+        <option value="1"selected>last hour</option>
+        <option value="2">last 2 hours</option>
+        <option value="6">last 6 hours</option>
+        <option value="12">last 12 hours</option>
+        <option value="24">last 24 hours</option> </select>
+    </select>
+    <span id="modeStatus">status: <b>live view</b></span>
+    <input type="file" id="fileInput" accept=".csv" style="display: none;">
+</div>
+
+<div class="container">
+    <h2>tvac server viewer</h2>
+    <div class="chart-wrapper">
+        <canvas id="myChart"></canvas>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
